@@ -1,5 +1,6 @@
 /*
-* Author ok8008@yeah.net
+* Author : ok8008@yeah.net
+* link : https://github.com/liutian1937/Popbox
 */
 (function($){
 	var defaults = {
@@ -123,7 +124,7 @@
 				break;
 			case 'prompt' :
 				_this.options['width'] = 300;
-				_this.options['msg'] = '<form name="popForm"><ul class="formWrap popList"><div style="margin-left:0;margin-right:22px;"><input type="text" class="popInput" name="popInput" value="" style="width:100%;"></div></ul></form>';
+				_this.options['msg'] = '<form name="popForm" onsubmit="return false;"><ul class="formWrap popList"><div style="margin-left:0;margin-right:22px;"><input type="text" class="popInput" name="popInput" value="" style="width:100%;"></div></ul></form>';
 				break;
 		}
 		
@@ -146,6 +147,9 @@
 			_this.obj.bottomObj.append(_this.obj['completeObj']);
 			_this.obj['completeObj'].die('click');
 			_this.obj['completeObj'].on('click',function(){
+				if($(this).find('.popLoading').length > 0){
+					return false;
+				}
 				_this._complete();
 			});
 		}
