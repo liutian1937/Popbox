@@ -145,7 +145,7 @@
 			//重新绑定complete事件
 			_this.obj['completeObj'] = $('<a href="javascript:void(0);" class="btn blue popComplete">'+_this.options.completeText+'</a>');
 			_this.obj.bottomObj.append(_this.obj['completeObj']);
-			_this.obj['completeObj'].die('click');
+			_this.obj['completeObj'].off('click');
 			_this.obj['completeObj'].on('click',function(){
 				if($(this).find('.popLoading').length > 0){
 					return false;
@@ -157,7 +157,7 @@
 			//重新绑定cancel事件
 			_this.obj['cancelObj'] = $('<a href="javascript:void(0);" class="btn gray popCancel">'+_this.options.cancelText+'</a>');
 			_this.obj.bottomObj.append(_this.obj['cancelObj']);
-			_this.obj['cancelObj'].die('click');
+			_this.obj['cancelObj'].off('click');
 			_this.obj['cancelObj'].on('click',function(){
 				_this._cancel();
 			});
