@@ -98,6 +98,7 @@
 				$('#popMark').show();
 			}
 			_this.element.show();
+			_this._ready(); //窗口初始化结束，执行
 			return false;
 		}
 		
