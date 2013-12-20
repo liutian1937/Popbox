@@ -19,7 +19,8 @@
 		completeText : '确定', //完成按钮的文字
 		cancelText : '取消', //取消按钮的文字
 		loadingImg : 'loading.gif', //loading图片的路径
-		reload : true //是否需要重载数据，只有设置id才会生效
+		reload : true, //是否需要重载数据，只有设置id才会生效
+		drag : true //是否允许拖拽
 	}
 	var Tools = {
 		shake : function (element) {
@@ -268,7 +269,9 @@
 			height : $(window).height()
 		}
 		_this._initSize();
-		Tools.drag(_this.element,_this.winSize); //绑定拖拽事件
+		if(_this.options.drag){
+			Tools.drag(_this.element,_this.winSize); //绑定拖拽事件
+		}
 	}
 	PopIt.fn.step = function (params) {
 		this.show(params,'step');
